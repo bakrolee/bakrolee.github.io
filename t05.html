@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>::before/after</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/xpressengine/xeicon@2.3.1/xeicon.min.css">
+    <style>
+    .container {
+        display: block;
+        width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .container h1::before {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 3px;
+        background: #f00;
+        vertical-align: middle;
+        margin: 0 0 10px 0;
+    } 
+    .container h2::after {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 3px;
+        background: #f00;
+        vertical-align: middle;
+        margin: 0 0 10px 0;
+    } 
+
+    .container h3::before {
+        content: "\e962";
+        font-family: xeicon!important;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <h2><i class="xi-flag-o"></i> Lorem ipsum dolor sit amet.</h2>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+    </div>
+    
+</body>
+</html>
