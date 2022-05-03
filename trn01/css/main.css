@@ -58,7 +58,8 @@
     margin: 0 0 30px 0;
     background: -webkit-linear-gradient( #4a3df7, #99269f);
     -webkit-background-clip: text;
-    color: transparent
+    color: transparent;
+    line-height: 1.2;
 }
 
 .main_slider strong {
@@ -163,7 +164,7 @@
     font-weight: 700;
     background: linear-gradient(#4a3df7, #99269f );
     -webkit-background-clip: text;
-    color: transparent
+    color: transparent;
 }
 .main_banner .customer i {
     position: absolute;
