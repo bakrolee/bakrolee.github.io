@@ -1,0 +1,289 @@
+ /*폰트를 가져오는 것 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+/* 아이콘 가져오기 - 
+xeicon사이트에서 //cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css 복붙 */
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif; /*폰트를 적용시키는 것 */
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.top_banner {
+    padding: 25px 0;
+    background: #f1f1f1;
+}
+
+.top_banner .container {       
+    /* .container의 디스플레이 flex 효과를 사라지게함 */
+    display: block;
+}
+
+.top_banner h2 {
+    font-family: 'Nanum Myeongjo', serif; /*폰트를 적용시키는 것 */
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+
+.top_banner p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.top_banner a {
+    padding: 0 15px 4px 15px;
+    border: 1px solid #333;
+    margin: 0 0 0 20px;
+}
+
+.top_banner i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background: #333;
+    /* border-radius: 50%; */
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.header .gnb {
+    line-height: 100px;   /* 패딩을 주면 나중에 귀찮아지므로... */
+
+    
+}
+
+/* .header .gnb .container {
+    justify-content: space-between;
+    얘를 쓰면 정확도가 좀 떨어질 수 있어서 (레이아웃)
+    아래의 2개 박스에 마진을 각각 줌.
+} */
+.header .gnb nav {
+    margin: 0 0 0 auto;
+}
+.header .gnb form {
+    margin: 0 0 0 50px;
+}
+
+nav>ul {
+    display: flex;
+    /* gap: 40px; */
+}
+/*
+nav>ul>li {
+    padding: 0 20px; 
+       gap 대신 사용하는 방법. ie 때문에. 옛날방식.
+    단점 : 좌우 패딩값을 다 계산해서 레이아웃값 적용. 
+}
+*/
+
+nav>ul>li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 13px; /* 높이는 글자크기보다 좀 적게 */
+    background: #ddd;
+    margin: 0 20px;
+}
+
+#searchForm input[type='text'] {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    padding: 5px 0;
+}
+
+#searchForm button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 30px;
+}
+
+.main_visual figure {
+    position: relative;
+    height: 600px;
+}
+
+.main_visual .item01 {
+    background: url(../img/mainvisual01.jpg) no-repeat center center/cover;
+}
+.main_visual .item02 {
+    background: url(../img/mainvisual02.jpg) no-repeat center center/cover;
+}
+.main_visual .item03 {
+    background: url(../img/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.main_visual .container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.main_visual figure h3 {
+    font-size: 60px;
+    font-weight: 900;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 2px #333; /* 1자리: 우, 2자리: 아래, 3자리:블러(흐리게)   */
+}
+
+.main_visual figure.item02 h3 {
+    color: #333;
+    text-shadow: 0 0 2px #fff;
+}
+
+.main_visual figure p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+}
+
+.main_visual figure.item02 p {
+    color: #333;
+}
+
+.main_visual figure a {
+    font-size: 13px;
+    font-weight: 300;
+    /* 
+        display: block;
+        width: 100px;  
+    얘를 주면 글자수가 길어졌을 때 넘치게 되므로 inline-block과 패딩을 활용 */
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #fff;
+    background: #333;
+    padding: 5px 20px 8px 20px;
+}
+
+
+.main_visual figure h3 {    /* 슬라이드 전, 위치 */
+    transform: translateY(100px);
+    opacity: 0;
+    /* transition: 0.5s;   보통 슬라이드 만들 때는 여기 트랜지션 붙이면 백에서 문제 생김.*/
+}
+.main_visual figure.on h3{  /* 슬라이드 직후 */
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s;   /* 여기 트랜지션이 국룰(슬라이드 시) */
+}
+
+.main_visual figure p {  
+    transform: translateY(100px);
+    opacity: 0;
+}
+.main_visual figure.on p { 
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;  
+}
+
+.main_visual figure a {  
+    transform: translateY(100px);
+    opacity: 0;
+}
+.main_visual figure.on a { 
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.5s 1s;  
+}
+
+.main_visual .slick-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+.main_visual .slick-dots li {
+    display: inline-block;
+    width: 80px;
+    height: 5px;
+    background: #333;
+    margin: 0 5px;
+}
+
+.main_visual .slick-dots li::after {   /* 위치 헷갈렸음. after가 붙어도 li 아래에 속하기 때문에. li를 벗어나서 시작하지 않음. */
+    content: "";
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: #f00;
+}
+.main_visual .slick-dots li.slick-active::after {
+    width: 100%;
+    transition: 3s;
+}
+
+.main_visual .slick-dots button {
+    display: none;
+}
+
+
+/* 
+
+
+
+개인 연습
+
+
+
+*/
+
+.content01 {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.content01 h2 {
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    letter-spacing: 0.5em;
+}
+
+.content01>p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+/* .content01 figure {
+    flex: 1;
+    padding: 0 15px;
+} */
+.content01 .container {
+    gap: 30px;
+}
+.content01 figure .case {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.content01 figure img{
+    width: 100%;
+    transition: 0.5s;
+}
+.content01 .case:hover img {
+    transform: scale(1.5);
+}
+
+.content01 strong {
+    display: block;
+    margin-bottom: 20px;
+}
+.content01 a {
+    display: inline-block;
+    padding: 5px 30px 8px 30px;
+    border: 1px solid #333;
+}
