@@ -239,8 +239,6 @@ nav>ul>li~li::before {
 
 
 
-*/
-
 .content01 {
     padding: 80px 0;
     text-align: center;
@@ -259,10 +257,7 @@ nav>ul>li~li::before {
     margin-bottom: 25px;
 }
 
-/* .content01 figure {
-    flex: 1;
-    padding: 0 15px;
-} */
+/* 
 .content01 .container {
     gap: 30px;
 }
@@ -286,4 +281,270 @@ nav>ul>li~li::before {
     display: inline-block;
     padding: 5px 30px 8px 30px;
     border: 1px solid #333;
+}
+
+
+*/
+
+
+
+
+.basic {
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* 옛날 방법 - float 사용
+.dtainer {
+    width: 1200px;
+    margin: 0 auto;
+}
+.dtainer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.dtainer figure {
+    float: left; 
+     박스를 가로로 배치시킬 수 있음. 
+    단점: 플롯을 주면 플랙스와 달리 떠있음. 그래서 아래쪽에 패딩을 줘서 떨어트린 공간이 없어짐. (무시하고 내려감) 
+    -> 해결법 : <div style="clear:both"> 
+        단점 : html에 계속 쓸 데 없는 태그가 늘어나게됨.
+        -> 해결법 : after을 이용해 css에서 만들어주면 됨. = clear fix 라는 방법.
+    
+    width: 33.33333333%;
+     플롯을 쓰면 피겨의 개수에 따라 와이드 값도 다 바꿔줘야 함. 
+    padding: 0 15px; 
+     이미지 사이 띄워주는 법 
+}
+.dtainer figure img {
+    max-width: 100%;
+} */
+
+.basic .container {
+    gap: 30px;
+}
+section h2 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+section p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+}
+
+.basic figure {
+    flex: 1; /* 얘를 쓰면 그림이 늘어나도 계속 레이아웃 유지 */
+}
+.basic figure .inbox {
+    overflow: hidden;
+    border-radius: 75% 25% 50% 50% / 27% 29% 71% 73%;
+    transition: 0.5s 0.5s;
+    margin: 0 0 30px 0;
+}
+.basic figure:hover .inbox {
+    border-radius: 10px;
+}
+
+.basic figure img {
+    transition: 0.5s;
+}
+
+.basic figure:hover img {
+    transform: scale(1.25);
+}
+.basic figure strong {
+    display: block;
+    margin: 0 0 20px 0;
+}
+.basic figure a {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 5px 20px 10px;
+}
+
+.fixed_bg {
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover; /* cover는 이미지가 잘리든 말든 박스를 가득채워라, contain은 이미지 다 보여줘라 */
+    /* background-attachment: fixed; 얘 자리가 리핏 뒤임(축약)*/
+    filter: grayscale(1);
+}
+.fixed_bg span {
+    vertical-align: middle; 
+    /* 기본값대로 주면 아래쪽 라인에 붙어있음.
+    여튼, 둘 다 middle을 줘야 한개만 마진 줘서 위아래 위치 이동 가능  */
+}
+.fixed_bg i {
+    padding: 10px;
+    background: #333;
+    margin: 5px 0 0 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+
+.movie {
+    padding: 100px 0;
+}
+
+.movie .container {
+    gap: 50px;
+}
+.movie .container>* { /* 컨테이너 안의 모든(*) 자식(>)을 선택 */
+    flex: 1;
+}
+
+.movie .container .dec {
+    padding: 100px 0;
+}
+
+.movie video {
+    max-width: 100%;
+}
+
+.movie .dec i {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin: 0 5px 0 0;
+}
+
+
+.utube {
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+    filter: grayscale(1);
+}
+
+.utube i {
+    padding: 20px;
+    background: rgb(0, 0, 0, 0.5);
+    margin: 0 2px ;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/*  
+
+    개인 연습
+
+*/
+
+.product {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+}
+.product .product_slider {
+    width: 1200px;
+    margin: 0 auto;
+}
+.product .product_slider figure {
+    padding: 0 15px;
+}
+.product img {
+    max-width: 100%;
+}
+.product i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 40px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.product .xi-arrow-left {
+    margin-left: -700px;
+}
+.product .xi-arrow-right {
+    margin-left: 700px;
+}
+
+
+.product .slick-dots {
+    margin: 30px 0 0 0;
+}
+
+.product .slick-dots>li {
+    display: inline-block;
+    background: #f00;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 3px;
+}
+
+.product .slick-dots li.slick-active {
+    background: #333;
+}
+
+.product .slick-dots button {
+    display: none;
+}
+
+
+.service {
+    padding: 100px 0;
+    background: #f1f1f1;
+}
+
+.service .container>* {
+    flex: 1;
+}
+.service .container img {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.tab_menu ul {
+    display: flex;
+}
+.tab_menu ul>li {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    background: #333;
+    border: 1px solid #fff;
+    padding: 10px 0 15px 0;
+    cursor: pointer;
+}
+
+.tab_menu li.on {
+    background: rgb(228, 79, 158);
+}
+
+
+.tab_menu a {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+    line-height: 40px;
+    padding: 0 4px;
+}
+.tab_menu strong {
+    display: block;
+    width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab_menu span {
+    display: block;
+    margin: 0 0 0 auto;
+}
+.tab_menu span::before {
+    content: "[ ";
+}
+.tab_menu span::after {
+    content: " ]";
 }
