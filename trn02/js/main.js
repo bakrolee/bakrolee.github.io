@@ -47,26 +47,46 @@ $('.utube i:nth-of-type(2)').on('click', function(){
 });
 
 
-/// 5.10 개인연습 (선행)
+// $('.product_slider').on('init reInit afterChange', function(){ 
+//     let current = $('.product_slider .slick-center');
+//     current.addClass('on').siblings().removeClass('on'); 
+// });
+
 
 $('.product_slider').slick({
-    arrows: false,
     slidesToShow: 5,
+    centerMode: true,
+    arrows: false,
     dots: true,
-    autoplay: false,
+    autoplay: true,
 });
 
-$('.product .xi-arrow-left').on('click', function(){
-    $('.product_slider').slick('slickNext');
-});
-$('.product .xi-arrow-right').on('click', function(){
+$('.product_list .s_left').on('click', function(){
     $('.product_slider').slick('slickPrev');
 });
-
-
-$('.tab_menu li').on('click', function(){
-    $('.tab_menu li').addClass('on');
+$('.product_list .s_right').on('click', function(){
+    $('.product_slider').slick('slickNext');
 });
+
+
+
+
+$('.tab_link>li').on('click', function(){
+    // console.log($(this), $(this).index());
+    var idx = $(this).index();
+    $('.tab_content>li').eq(idx).addClass('on').siblings().removeClass('on')  
+    $(this).addClass('on').siblings().removeClass();
+});
+
+
+
+
+$('.footer #link').on('change', function(){
+    var lik = $(this).val();
+    // console.log(lik);
+    if(lik) window.open(lik);  //if(lik) = 만약에 값이 있으면 링크를 띄워라
+});
+
 
 ///////////////////////////////////
 });
