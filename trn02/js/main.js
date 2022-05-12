@@ -59,6 +59,17 @@ $('.product_slider').slick({
     arrows: false,
     dots: true,
     autoplay: true,
+    responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            centerMode: false,
+            
+          }
+        },
+        
+      ]
 });
 
 $('.product_list .s_left').on('click', function(){
@@ -86,6 +97,12 @@ $('.footer #link').on('change', function(){
     // console.log(lik);
     if(lik) window.open(lik);  //if(lik) = 만약에 값이 있으면 링크를 띄워라
 });
+
+
+$('.mbtn').on('click', function() {
+    $('nav').toggleClass('on');
+    $(this).toggleClass('is-active');
+})
 
 
 ///////////////////////////////////
