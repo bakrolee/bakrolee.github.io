@@ -126,13 +126,14 @@ body {
         margin: 20px 0 0 0;
         display: block;
         width: 100px;
+        text-align: center;
     }
     
     .top_banner i {
         position: absolute;
-        top: 0;
+        top: -10px;
         right: 0;
-        padding: 10px;
+        padding: 5px;
         background: #333;
         /* border-radius: 50%; */
         color: #f1f1f1;
@@ -242,7 +243,7 @@ nav>ul>li~li::before {
         display: flex;
         flex-direction: column;
         line-height: 40px;
-        padding: 10px 30px;
+        padding: 70px 30px;
     }
     
     nav>ul>li {
@@ -755,7 +756,7 @@ section p {
     position: relative;
 }
 
-.product_list small {
+/* .product_list small {
     position: absolute;
     display: inline-block;
     border-top: 10px solid rgb(255, 0, 0, 0.5);
@@ -765,14 +766,35 @@ section p {
     font-weight: 500;
     font-size: 13px;
     top: -14px;
-    left: 42%;
+    left: 300px;
+    right: 100px;
 }
 .product_list small span {
     position: absolute;
     top: -7px;
     left: -34px;
     color: #fff;
+} */
+
+
+.product_list h2::before {
+    content: "New";
+    position: absolute;
+    display: inline-block;
+    border-top: 12px solid rgb(254, 94, 86, 0.5);
+    border-right: 15px solid rgb(254, 94, 86 , 0.5);
+    border-bottom: 10px solid rgb(254, 94, 86, 0.5);
+    border-left: 12px solid rgb(254, 94, 86, 0.5);
+    border-radius: 83% 17% 84% 16% / 54% 55% 45% 46% ;
+    background: rgb(254, 94, 86, 0.7);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 13px;
+    top: -23px;
+    left: 50%;
+    transform: translate(130px, 0);
 }
+
 
 
 
@@ -854,24 +876,24 @@ section p {
     }
     
     
-    .product_list small {
-        position: absolute;
-        display: inline-block;
-        border-top: 10px solid rgb(255, 0, 0, 0.5);
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid rgb(255, 0, 0, 0.5);
-        border-left: 40px solid rgb(255, 0, 0, 0.5); 
-        font-weight: 500;
-        font-size: 13px;
-        top: -14px;
-        left: 170px;
-    }
-    .product_list small span {
-        position: absolute;
-        top: -7px;
-        left: -34px;
-        color: #fff;
-    }
+    /* .product_list h2::before {
+    content: "New";
+    position: absolute;
+    display: inline-block;
+    border-top: 12px solid rgb(254, 94, 86, 0.5);
+    border-right: 15px solid rgb(254, 94, 86 , 0.5);
+    border-bottom: 10px solid rgb(254, 94, 86, 0.5);
+    border-left: 12px solid rgb(254, 94, 86, 0.5);
+    border-radius: 83% 17% 84% 16% / 54% 55% 45% 46% ;
+    background: rgb(254, 94, 86, 0.7);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.89);
+    font-size: 13px;
+    top: -23px;
+    left: 50%;
+    transform: translate(150px, 0);
+} */
+
     
     
     
