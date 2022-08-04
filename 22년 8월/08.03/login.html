@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 1일차</title>
+    <style>
+        header h1 {
+            text-align: center;
+            color: #2db400;
+            padding: 20px 0 40px 0;
+        }
+        li {
+            list-style: none;
+        }
+
+        .login_wrap {
+            box-sizing: border-box;
+            width: 460px;
+            margin: 0 auto;
+        }
+
+        .login_menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .login_input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5px;
+        }
+
+        .login_input .checks {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        main > nav {
+            box-sizing: border-box;
+            width: 460px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        
+        .find li {
+            display: inline-block;
+            
+        }
+
+        .find li::before {
+            content: "";
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            background: rgb(53, 51, 51);
+            vertical-align: middle;
+            margin: 0 10px 0 10px;
+        } 
+
+        .find li:first-child::before {
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>네이버</h1>
+    </header>
+
+    <main>
+        <article class="login_wrap">
+            <nav>
+                <ul class="login_menu">
+                    <li>id 로그인</li>
+                    <li>일회용 번호</li>
+                    <li>QR코드</li>
+                </ul>
+            </nav>
+
+            <form class="login_input">
+                <input type="text" name="id" placeholder="아이디를 입력해주세요">
+                <input type="password" name="pw" placeholder="비밀번호를 입력해주세요">
+                <div class="checks">
+                    <label><input type="checkbox" name="keep_login" value="1">로그인 유지</label>
+                    <label>IP보안<input type="checkbox" name="ip보안" value="1"></label>
+                </div>
+                <input type="submit" value="로그인">
+            </form>
+        </article>
+
+        <nav>
+            <ul class="find">
+                <li><a href="">비밀번호 찾기</a></li>
+                <li><a href="">아이디 찾기</a></li>
+                <li><a href="">회원가입</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer>
+        <p>이용약관~~~</p>
+    </footer>
+</body>
+
+</html>
