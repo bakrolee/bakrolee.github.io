@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>0804 예제 - 스톱워치</title>
+    <style>
+        div p {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="min">00</p>
+        <p>:</p>
+        <p id="sec">00</p>
+    </div>
+    <button id="start">시작</button>
+    <button id="stop">정지</button>
+    <button id="resume">다시시작</button>
+    
+</body>
+<script>
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+    
+    let interval;
+    let s;
+    let m;
+
+    let start = document.getElementById("start").addEventListener("click", function(e) {
+        clearInterval(interval);
+        s = 0;
+        m = 0;
+        interval = setInterval(function() {
+            s++;
+            if (s < 10) {
+                sec.innerText = "0" + s;
+            } else if (s < 60) {
+                sec.innerText = s;
+            } else {
+                m++;
+                if (m < 10) {
+                    min.innerText = "0" + m;
+                } else {
+                    min.innerText = m;
+                }
+
+                sec.innerText = "00";
+                s = 0;
+            }
+        }, 1000);
+    });
+
+    document.getElementById("stop").addEventListener("click", function(e) {
+        clearInterval(interval);
+    });
+</script>
+</html>

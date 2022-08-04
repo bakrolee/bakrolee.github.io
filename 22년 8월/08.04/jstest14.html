@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>자바 스크립트</title>
+    <style>
+        .red {  /* 클래스 속성을 만듬.*/
+            color : red;
+        }
+    </style>
+</head>
+<body>
+    <button id="move">이동하기</button>
+    <div id="mydiv"></div>
+    <button id="changebtn">텍스트값 변경하기</button>
+    <button id="color">색깔 변경하기</button>
+</body>
+<script>
+    document.getElementById("move").addEventListener("click", function (e) {
+        if (confirm("네이버로 이동하시겠습니까?")) {  // 사용자가 확인 누르면 true, 취소 = false
+            window.location.href = "http://www.naver.com";
+            // location.href = 현재 주소값을 나타냄.
+        }
+    });
+
+    let mydiv = document.getElementById("mydiv");
+    let changebtn = document.getElementById("changebtn");
+
+    changebtn.addEventListener("click", function(e) {
+        // mydiv.innerText = "<strong>텍스트값을 변경하였습니다.</strong>";
+        mydiv.innerHTML = "<strong>텍스트값을 변경하였습니다.</strong>";
+    });
+
+    let colorbtn = document.getElementById("color");
+    colorbtn.addEventListener("click", function(e) {
+        // mydiv.style.color = "red";
+        mydiv.classList.toggle("red");
+    });
+</script>
+</html>

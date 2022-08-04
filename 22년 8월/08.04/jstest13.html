@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>자바 스크립트</title>
+</head>
+<body>
+    <button id="mybtn">눌러봐</button>
+    <input id="mytext" value="test text"/>
+    <button id="printbtn">콘솔 출력하기</button>
+</body>
+<script>
+    function myListener(e) {
+        alert("왜 누르니?");
+        console.log(e);
+    }
+
+    // mybtn.onclick = myListener;
+    let elem = document.getElementById("mybtn"); // element 객체를 반환해줌
+    elem.addEventListener("click", myListener);
+
+
+    // text 입력 요소, button 요소를 배치하고
+    // 사용자가 입력한 내용을 콘솔 출력하기
+
+    let inputText = document.getElementById("mytext");
+    let printbtn = document.getElementById("printbtn");
+    printbtn.addEventListener("click", function (e) {
+        console.log(inputText.value);
+    });
+
+    elem.addEventListener("click", myListener);
+</script>
+</html>
